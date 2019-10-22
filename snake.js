@@ -23,25 +23,8 @@ window.onload = function () {
         ctx.beginPath();
         ctx.fillStyle = "white";
         ctx.fillRect(x*snakeW, y*snakeH, snakeW, snakeH);
-        ctx.fillStyle = "black";
-        ctx.strokeRect(x*snakeW, y*snakeH, snakeW, snakeH);
-    }
-
-    //lấy sự kiện phím
-    document.addEventListener("keydown", getDirection);
-
-    //hàm lấy sự kiện phím để chọn hướng đi của rắn
-    var direction = "right";
-    function getDirection(num) {
-        if (num.keyCode == 37 && direction != "right") {
-            direction = "left";
-        } else if (num.keyCode == 38 && direction != "down") {
-            direction = "up";
-        } else if (num.keyCode == 39 && direction != "left") {
-            direction = "right";
-        } else if (num.keyCode == 40 && direction != "up") {
-            direction = "down";
-        }
+/*        ctx.fillStyle = "black";
+        ctx.strokeRect(x*snakeW, y*snakeH, snakeW, snakeH);*/
     }
 
     //kiểm tra điều kiện đầu rắn đâm vào người rắn
@@ -65,8 +48,8 @@ window.onload = function () {
         ctx.beginPath();
         ctx.fillStyle = "yellow";
         ctx.fillRect(x*snakeW, y*snakeH, snakeW, snakeH);
-        ctx.fillStyle = "black";
-        ctx.strokeRect(x*snakeW, y*snakeH, snakeW, snakeH);
+/*        ctx.fillStyle = "black";
+        ctx.strokeRect(x*snakeW, y*snakeH, snakeW, snakeH);*/
     }
 
     //khai báo và hiển thị điểm ở dưới khung canvas
@@ -77,6 +60,24 @@ window.onload = function () {
         ctx.fillText("score: "+x,5, canvasH-5);
 
     }
+
+    //lấy sự kiện phím
+    document.addEventListener("keydown", getDirection);
+
+    //hàm lấy sự kiện phím để chọn hướng đi của rắn
+    var direction = "right";
+    function getDirection(num) {
+        if (num.keyCode == 37 && direction != "right") {
+            direction = "left";
+        } else if (num.keyCode == 38 && direction != "down") {
+            direction = "up";
+        } else if (num.keyCode == 39 && direction != "left") {
+            direction = "right";
+        } else if (num.keyCode == 40 && direction != "up") {
+            direction = "down";
+        }
+    }
+
 
     //function để chạy game
     function gameLaunch() {
